@@ -1,10 +1,10 @@
-[![Test Execution](https://github.com/VinayKumarBM/playwright-cucumber-sample/actions/workflows/main.yml/badge.svg)](https://github.com/VinayKumarBM/playwright-cucumber-sample/actions/workflows/main.yml)
+
 <br>
-# playwright-cucumber-sample
+# playwright-cucumber-TS-sample
 
 ## **Overview:**
 
-This is a sample test automation framework developed using **Playwright** with **Cucumber**.
+This is a sample test automation framework developed using **Playwright** with **Cucumber** with TS.
 
 **Playwright** is a framework for Web Testing and Automation. It allows testing Chromium, Firefox and WebKit with a single API. Playwright is built to enable cross-browser web automation that is ever-green, capable, reliable and fast.
 
@@ -42,7 +42,7 @@ For Demo purpose web UI test cases are created on [ecommerce-playground.lambdate
 
 Playwright framework requires [Node.js](https://nodejs.org/) v14+ to run.
 
-Code from github need to be [download](https://github.com/VinayKumarBM/playwright-cucumber-sample/archive/refs/heads/master.zip) OR [cloned](https://github.com/VinayKumarBM/playwright-cucumber-sample.git) using git command.
+Code from github need to be [download](https://github.com/kundansingh3488/playwright-cucumber-sample-master/archive/refs/heads/main.zip) OR [cloned](https://github.com/kundansingh3488/playwright-cucumber-sample-master.git) using git command.
 
 Installing the dependencies.
 ```sh
@@ -96,5 +96,4 @@ Execution log will be present in the log file.
 ```sh
 test-results/logs/execution.log
 ```
-##  Before you Go
-**:pencil: If you find my work interesting don't forget to give a Star <g-emoji class="g-emoji" alias="star" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png">⭐</g-emoji> & Follow me :busts_in_silhouette:**
+Thank you.....
