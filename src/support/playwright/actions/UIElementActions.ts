@@ -13,7 +13,8 @@ export default class UIElementActions {
    * Returns the first locator
    * @returns
    */
-  public getLocator(): Locator {
+  public 
+  getLocator(): Locator {
     return this.locator.first();
   }
 

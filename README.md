@@ -60,7 +60,7 @@ npm run test
 ```
 To run specific scenario, use tags command. Below are few examples.
 ```sh
-npm run test:tags @sanity
+npm run test:tags "@sanity"
 npm run test:tags "@calculator or @author"
 npm run test:tags "@rest and @author"
 ```

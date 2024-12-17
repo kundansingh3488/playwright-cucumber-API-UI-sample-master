@@ -17,6 +17,7 @@ export default class RegisterUserPage {
     private PRIVACY_POLICY_LINK = "//a/b[text()='Privacy Policy']";
     private CONTINUE_BUTTON = "[value='Continue']";
     
+    
     public async enterRegistrationDetails(firstName: string, lastName: string, email: string, telephone: string, password: string, confirmPassword: string, subscribe: string) {
         await this.web.editBox(this.FIRST_NAME_TEXTBOX, Constants.FIRST_NAME).fill(firstName);
         await this.web.editBox(this.LAST_NAME_TEXTBOX, Constants.LAST_NAME).fill(lastName);

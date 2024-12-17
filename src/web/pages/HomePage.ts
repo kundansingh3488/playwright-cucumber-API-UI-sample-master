@@ -10,4 +10,7 @@ export default class HomePage {
     public async navigateToHomePage() {
         await this.web.goto(process.env.BASE_URL, "Home page");
     }
+    public async navigateToMainPage() {
+        await this.web.goto(process.env.BASE_POLESTAR_URL, "Home page");
+    }
 }

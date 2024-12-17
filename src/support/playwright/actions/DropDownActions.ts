@@ -17,6 +17,7 @@ export default class DropDownActions {
     this.locator = locator;
     this.description = description;
     return this;
+    
   }
 
   /**
