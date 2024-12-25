@@ -13,6 +13,7 @@ export default class UIActions {
   private checkboxAction: CheckBoxActions;
   private dropdownAction: DropDownActions;
   private alertAction: AlertActions;
+  private uiAction: UIActions;
 
   constructor(private page: Page) {
     this.elementAction = new UIElementActions(page);
@@ -20,6 +21,7 @@ export default class UIActions {
     this.checkboxAction = new CheckBoxActions();
     this.dropdownAction = new DropDownActions();
     this.alertAction = new AlertActions(this.page);
+    this.uiAction = new UIActions(page);
   }
 
   /**
@@ -75,6 +77,10 @@ export default class UIActions {
    */
   public element(selector: string, description: string) {
     return this.elementAction.setElement(selector, description);
+  }
+
+  public webElement(selector: string) {
+    return this.elementAction.setWebElement(selector);
   }
 
   /**

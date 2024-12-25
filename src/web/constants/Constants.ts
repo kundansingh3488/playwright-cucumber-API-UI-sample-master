@@ -13,6 +13,7 @@ export default class Constants {
     static readonly  CONFIRM_PASSWORD = "Confirm Password";
     static readonly PRIVACY_POLICY = "Privacy Policy";
     static readonly CONTINUE = "Continue";
+    static readonly ACCEPT_POPUP = "Accept all";
     static readonly MENU_OPTION = "Polestar 4";
     static readonly DESIGN_ORDER = "Design and order";
     static readonly LONG_RANGE_DUAL_MOTOR = "Long range Dual motor";

@@ -8,27 +8,25 @@ import  UIActions from "../../support/playwright/actions/UIActions";
 
 Given('user is on main page', async function () {
     await new HomePage(this.web).navigateToMainPage();
-    await new HomePage(this.web).navigateToMainPage();
+    await new UIActions(this.web).waitForDomContentLoaded();
     // await new UIActions(this.web).dismissAlertOnElementClick();
 });
 
-Then('Varify visibility of home page Menu option', async function () {
-    // await new UIActions(this.web).acceptAlertOnElementClick();
-    
-    await new poleStarDashboardPage(this.web).verifyMenuOptions;
+When('Accept popup of home page', async function () {
+  
+    await new poleStarDashboardPage(this.web).acceptAllPopup();
 });
 
 When('Select menu option {string}', async function (menu: string) {
-    await new poleStarDashboardPage(this.web).selectMenueOption;
-   
+    await new poleStarDashboardPage(this.web).selectMenueOption(menu);
 });
 
 When('Select {string} option', async function (order: string) {
-    await new poleStarDashboardPage(this.web).selectDesignOrder;
+    await new poleStarDashboardPage(this.web).selectDesignOrder(order);
 });
 
 When('select exterior {string} of the car', async function (order:string) {
-    await new poleStarDashboardPage(this.web).selectDesignOrder;
+    await new poleStarDashboardPage(this.web).selectDesignOrder(order);
 });
 
 Then('Varify colour of the car should be {string}', async function (order:string) {
@@ -36,10 +34,10 @@ Then('Varify colour of the car should be {string}', async function (order:string
 });
 
 When('Select {string} first check box', async function (order:string) {
-    await new poleStarDashboardPage(this.web).selectPilotboxCheckbox;
+    await new poleStarDashboardPage(this.web).selectPilotboxCheckbox(order);
 });
 
 When('Select {string} check box', async function (order:string) {
-    await new poleStarDashboardPage(this.web).selectElectroMagneticCheckbox;
+    await new poleStarDashboardPage(this.web).selectElectroMagneticCheckbox(order);
 });
 

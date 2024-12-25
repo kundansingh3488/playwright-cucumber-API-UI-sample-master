@@ -6,7 +6,8 @@ import Constants from "../constants/Constants";
 export default class poleStarDashboardPage {
     constructor(private web: UIActions) { }
     
-    private MENU_POLESTAR4 = "#mega-menu-:r1n:-secondary-navigation-control-2";
+    private ACCEPT_POPUPS = "[id='onetrust-accept-btn-handler']";
+    private MENU_POLESTAR4 = "button[id='mega-menu-:r1:-secondary-navigation-control-2']";
     private MENU_POLESTAR3 = "#mega-menu-:r1n:-secondary-navigation-control-1";
     private MENU_POLESTAR2 = "#mega-menu-:r1n:-secondary-navigation-control-0";
 
@@ -17,13 +18,14 @@ export default class poleStarDashboardPage {
     private NEXT_IMG = "button[class='css-1esvy6s'] span[class='css-62qso3'] svg";
     private PILOTBOX_CHECKBOX ="[value='Pilot-paketet']";
     private ELEKTROKROMATICSKT_CHECKBOX ="[value='Elektrokromatiskt glastak']";
+    
 
-    public async verifyMenuOptions() {
-        // await this.web.element(this.MENU_POLESTAR3, Constants.MENU_OPTION).isVisible();
+    public async acceptAllPopup() {
+      //   await  new UIActions(this.page).acceptAlertOnElementClick(this.ACCEPT_POPUPS, Constants.ACCEPT_POPUP);
+        await this.web.element(this.ACCEPT_POPUPS, Constants.ACCEPT_POPUP).click();
 
     }
     public async selectMenueOption(product: string) {
-        await 
        await this.web.element(this.MENU_POLESTAR4, Constants.MENU_OPTION).click();
     }
 

@@ -39,6 +39,17 @@ export default class UIElementActions {
     return this;
   }
 
+   /**
+   * Sets the locator using the selector * 
+   * @param selector 
+   * @returns
+   */
+  public setWebElement(selector: string): UIElementActions {
+    this.selector = selector;
+    this.locator = this.page.locator(this.selector);
+    return this;
+  }
+
   /**
    * Sets the locator with description
    * @param locator
