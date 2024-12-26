@@ -12,6 +12,7 @@ function getHeader() {
         .set(Constants.AUTHORIZATION, `${Constants.BASIC} ${Buffer.from(`${Constants.USER}:${Constants.USER}`)
             .toString(Constants.BASE64)}`).get();
 }
+// Get Header common methods ...............................
 
 When('user makes a request to retrieves all the Books in the System', async function () {
     const endPoint = `${process.env.REST_API_BASE_URL}${Constants.BOOK_EP}${this.id}`;
