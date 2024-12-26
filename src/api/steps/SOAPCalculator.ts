@@ -22,6 +22,8 @@ async function validateResult(response: SOAPResponse, xpath: string, operation: 
     await Assert.assertEquals((await response.getTagContentByXpath(xpath, operation)), result, operation);
 }
 
+// Above the methods for the genaric function for the post request......................
+
 When('user adds two numbers {int} and {int} in the calculator', async function (number1: number, number2: number) {
     this.response = await makePostRequest(this.attach, this.soap, Constants.ADD_SOAP_ACTION, Constants.ADD, number1, number2);
 });

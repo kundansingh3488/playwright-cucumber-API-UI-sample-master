@@ -13,8 +13,7 @@ export default class UIElementActions {
    * Returns the first locator
    * @returns
    */
-  public 
-  getLocator(): Locator {
+  public getLocator(): Locator {
     return this.locator.first();
   }
 
@@ -36,17 +35,6 @@ export default class UIElementActions {
     this.selector = selector;
     this.locator = this.page.locator(this.selector);
     this.description = description;
-    return this;
-  }
-
-   /**
-   * Sets the locator using the selector * 
-   * @param selector 
-   * @returns
-   */
-  public setWebElement(selector: string): UIElementActions {
-    this.selector = selector;
-    this.locator = this.page.locator(this.selector);
     return this;
   }
 
