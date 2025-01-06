@@ -7,7 +7,8 @@ export default class poleStarDashboardPage {
     constructor(private web: UIActions) { }
     
     private ACCEPT_POPUPS = "[id='onetrust-accept-btn-handler']";
-    private MENU_POLESTAR4 = "button[id='mega-menu-:r1:-secondary-navigation-control-2']";
+   //  private MENU_POLESTAR4 = "button[id='mega-menu-:r1:-secondary-navigation-control-2']";
+    private MENU_POLESTAR4 = "button[id='mega-menu-:rk:-secondary-navigation-control-2']";
     private MENU_POLESTAR3 = "#mega-menu-:r1n:-secondary-navigation-control-1";
     private MENU_POLESTAR2 = "#mega-menu-:r1n:-secondary-navigation-control-0";
 
