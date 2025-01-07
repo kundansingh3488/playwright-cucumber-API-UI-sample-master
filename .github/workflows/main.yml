@@ -4,9 +4,10 @@
 name: Automation Test Execution 
 
 on:
+  workflow_dispatch:
   push:
-    branches: [ master ]
-
+    branches: [ main ]
+    
 jobs:
   tests:
     name: Cucumer features execution

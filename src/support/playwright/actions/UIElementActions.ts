@@ -247,6 +247,7 @@ export default class UIElementActions {
     Log.info(`Getting the count of ${this.description}`);
     return await this.getLocators().count();
   }
+
   /**
    * Performs mouse click action on the element
    * @returns 
@@ -258,6 +259,7 @@ export default class UIElementActions {
     await this.page.mouse.click(box.x + box.width / 2, box.y + box.height / 2);
     return this;
   }
+  
   /**
    * Click on element using js
    * @returns

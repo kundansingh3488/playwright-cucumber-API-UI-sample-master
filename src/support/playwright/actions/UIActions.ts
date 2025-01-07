@@ -49,6 +49,21 @@ export default class UIActions {
     this.page.close();
   }
 
+   /**
+   * Close any page 
+   * @returns 
+   */
+  public async closeTab(options?: {
+    tabId?: number
+}) {
+    if (options?.tabId) {
+        await this.page.context().pages()[options.tabId].close();
+    }
+    else {
+        await this.page.close()
+    }
+}
+
   /**
    * Returns the instance of Alert
    * @returns
@@ -260,4 +275,5 @@ export default class UIActions {
     // eslint-disable-next-line no-promise-executor-return
     return new Promise((resolve) => setTimeout(resolve, sec * CommonConstants.ONE_THOUSAND));
   }
+
 }
