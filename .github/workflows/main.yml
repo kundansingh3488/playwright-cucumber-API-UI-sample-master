@@ -6,7 +6,7 @@ name: Automation Test Execution
 on:
   workflow_dispatch:
   push:
-    branches: [ main ]
+    branches: [ dev ]
     
 jobs:
   tests:
@@ -15,15 +15,16 @@ jobs:
     steps:
     - name: Checkout code from repository
       uses: actions/checkout@v3
-    - name: Setting up Node.js 16
+    - name: Setting up Node.js 22
       uses: actions/setup-node@v3
       with:
-        node-version: 16
+        node-version: 22
         cache: 'npm'
     - name: Install dependencies    
       run: npm ci
     - name: Test execution
-      run: npm run test:tags "@validSearch"
+      # run: npm run test:tags "@validSearch"
+      run: npm run test:tags "@regression"
     - name: Upload test results
       if: always()
       uses: actions/upload-artifact@v3
