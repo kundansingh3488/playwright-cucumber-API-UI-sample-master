@@ -110,4 +110,4 @@ Then('user should see book in search result with details {string}, {string}, {in
     await Assert.assertEquals(await response.getTagContentByJsonPath(Constants.FIRST_AUTHOR_ID_JSON_PATH, Constants.SEARCH_BOOK), authorID, Constants.SEARCH_BOOK);
     await Assert.assertContains(await response.getTagContentByJsonPath(Constants.FIRST_DATE_ADDED_ISO_JSON_PATH, Constants.SEARCH_BOOK), dateAddedIso, Constants.SEARCH_BOOK);
     await Assert.assertEquals(await response.getTagContentByJsonPath(Constants.FIRST_ID_JSON_PATH, Constants.SEARCH_BOOK), this.bookID, Constants.SEARCH_BOOK);
-});
+})
