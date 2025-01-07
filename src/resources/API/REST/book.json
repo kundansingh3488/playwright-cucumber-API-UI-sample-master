@@ -1,17 +1,17 @@
 {
     "Author": {
-        "Age": {age},
-        "Id": {authorID},
+        "Age": "{age}",
+        "Id": "{authorID}",
         "Name": "{authorName}"
     },
-    "AuthorId": {authorID},
+    "AuthorId": "{authorID}",
     "DateAdded": "/Date({dateAdded})/",
     "DateAddedIso": "{dateAddedIso}T00:00:00",
     "Genre": {
-        "Id": {genreId},
+        "Id": "{genreId}",
         "Name": "{genreName}"
     },
-    "GenreId": {genreId},
-    "IsOutOfPrint": {available},
+    "GenreId": "{genreId}",
+    "IsOutOfPrint": "{available}",
     "Name": "{bookName}"
 }
