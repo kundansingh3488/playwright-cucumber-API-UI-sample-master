@@ -11,16 +11,29 @@ export default class CommonPage {
     private SEARCH_BUTTON = ".search-button";
     private MY_ACCOUNT_LINK = "//li[contains(@class,'dropdown')]//span[contains(text(),'My account')]";
     private MENU_LINK = "//ul[contains(@class,'dropdown-menu')]//span[contains(text(),'{0}')]";
+    //==========================
+    // private MENU_POLESTAR3 = "#mega-menu-\:rp\:-secondary-navigation-control-"+$+"";
+    private MENU_POLESTAR3 = "#mega-menu-\:rp\:-secondary-navigation-control-1";
 
     /**
      * Search for a product from header banner
      * @param product 
      */
+
     public async searchProduct(product: string) {
         await this.web.editBox(this.SEARCH_TEXTBOX, Constants.PRODUCT).fill(product);
         await this.web.element(this.SEARCH_BUTTON, Constants.SEARCH_BUTTON).click();
     }
-
+        // ===================
+     /**
+     * select for a product from header banner
+     * @param product 
+     */
+    public async selectProduct(product: string) {
+        await this.web.element(this.MENU_POLESTAR3, Constants.PRODUCT).hover();
+        await this.web.element(this.MENU_POLESTAR3, Constants.PRODUCT).click();
+    }
+        // ===================
     public async logout() {
         await this.web.element(this.MY_ACCOUNT_LINK, Constants.MY_ACCOUNT).hover();
         await this.web.element(StringUtil.formatString(this.MENU_LINK, Constants.LOGOUT), Constants.LOGOUT).click();
