@@ -10,7 +10,7 @@ This is a sample test automation framework developed using **Playwright** with *
 
 **Cucumber** is a tool for running automated tests written in plain language. Because they're written in plain language, they can be read by anyone on your team. Because they can be read by anyone, you can use them to help improve communication, collaboration and trust on your team. Cucumber supports behavior-driven development. Central to the Cucumber BDD approach is its ordinary language parser called Gherkin. 
 
-For Demo purpose web UI test cases are created on [ecommerce-playground.lambdatest.io](https://ecommerce-playground.lambdatest.io/index.php) site and API test cases are created on these [SOAP Calculator API](http://www.dneonline.com/calculator.asmx) & [REST Library Information System API](https://www.libraryinformationsystem.org/Services/RestService.svc) endpoints.
+For Demo purpose web UI test cases are created on [Polestar](https://www.polestar.com/us) site and API test cases are created on these [SOAP API](http://www.dneonline.com/calculator.asmx) & [REST Information API](https://www.libraryinformationsystem.org/Services/RestService.svc) endpoints.
 
 ## Features
 
@@ -82,6 +82,10 @@ Similar command can be used to update other environment configuration
 To generate HTML and Cucumber report use below command
 ```sh
 npm run report
+```
+To generate auto code by codegen
+```sh
+npx playwright codegen
 ```
 ##### 4. Report & Logs
 Cucumber HTML report will be present inside

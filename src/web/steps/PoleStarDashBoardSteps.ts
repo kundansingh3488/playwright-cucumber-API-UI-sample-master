@@ -12,11 +12,6 @@ Given('user is on main page', async function () {
     // await new UIActions(this.web).dismissAlertOnElementClick();
 });
 
-When('Accept popup of home page', async function () {
-  
-    await new poleStarDashboardPage(this.web).acceptAllPopup();
-});
-
 When('Select menu option {string}', async function (menu: string) {
     await new poleStarDashboardPage(this.web).selectMenueOption(menu);
 });

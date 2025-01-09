@@ -5,3 +5,6 @@
 node_modules
 /.vscode
 @rerun.txt
+/playwright-report/
+/blob-report/
+/playwright/.cache/

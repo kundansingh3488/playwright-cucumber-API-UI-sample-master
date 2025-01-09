@@ -9,7 +9,7 @@ export default class poleStarDashboardPage {
     private ACCEPT_POPUPS = "[id='onetrust-accept-btn-handler']";
    //  private MENU_POLESTAR4 = "button[id='mega-menu-:r1:-secondary-navigation-control-2']";
     private MENU_POLESTAR4 = "button[id='mega-menu-:rk:-secondary-navigation-control-2']";
-    private MENU_POLESTAR3 = "#mega-menu-:r1n:-secondary-navigation-control-1";
+    private MENU_POLESTAR3 = "#mega-menu-\:rp\:-secondary-navigation-control-1";
     private MENU_POLESTAR2 = "#mega-menu-:r1n:-secondary-navigation-control-0";
 
     private DESIGN_ORDER = "a[aria-label='Konfigurera Polestar 4']";
@@ -19,10 +19,15 @@ export default class poleStarDashboardPage {
     private NEXT_IMG = "button[class='css-1esvy6s'] span[class='css-62qso3'] svg";
     private PILOTBOX_CHECKBOX ="[value='Pilot-paketet']";
     private ELEKTROKROMATICSKT_CHECKBOX ="[value='Elektrokromatiskt glastak']";
+
+   //  private TESTDRIVE ="[aria-label='Test drive Polestar 3']";
+    private TESTDRIVE ="//*[contains(text(),'Test drive')]";
+    private SELECT_MODEL_3 ="[data-dd-action-name='Polestar 3']";
+    private SELECT_MODEL_2 ="[data-dd-action-name='Polestar 2']";
+    private SELECT_MODEL_4 ="[data-dd-action-name='Polestar 4']";
     
 
     public async acceptAllPopup() {
-      //   await  new UIActions(this.page).acceptAlertOnElementClick(this.ACCEPT_POPUPS, Constants.ACCEPT_POPUP);
         await this.web.element(this.ACCEPT_POPUPS, Constants.ACCEPT_POPUP).click();
 
     }
@@ -35,22 +40,18 @@ export default class poleStarDashboardPage {
      }
 
      public async selectExteriorColour(product: string) {
-        await this.web.element(this.EXTERIOR_COLOUR, Constants.EXTERIOR_COLOUR).scrollIntoView();
-        await this.web.element(this.EXTERIOR_COLOUR, Constants.EXTERIOR_COLOUR).click();
+        (await this.web.element(this.EXTERIOR_COLOUR, Constants.EXTERIOR_COLOUR).scrollIntoView()).click();
      }
 
      public async selectInteriorColour(product: string) {
-        await this.web.element(this.INTERIOR_COLOUR, Constants.INTERIOR_COLOUR).scrollIntoView();
-        await this.web.element(this.INTERIOR_COLOUR, Constants.INTERIOR_COLOUR).click();
+        (await this.web.element(this.INTERIOR_COLOUR, Constants.INTERIOR_COLOUR).scrollIntoView()).click();
      }
 
     public async selectPilotboxCheckbox(product: string) {
-        await this.web.element(this.PILOTBOX_CHECKBOX, Constants.PILOTBOX_CHECKBOX).scrollIntoView();
-        await this.web.element(this.PILOTBOX_CHECKBOX, Constants.PILOTBOX_CHECKBOX).click();
+        (await this.web.element(this.PILOTBOX_CHECKBOX, Constants.PILOTBOX_CHECKBOX).scrollIntoView()).click();
      }
 
      public async selectElectroMagneticCheckbox(product: string) {
-        await this.web.element(this.ELEKTROKROMATICSKT_CHECKBOX, Constants.ELEKTROKROMATICSKT_CHECKBOX).scrollIntoView();
-        await this.web.element(this.ELEKTROKROMATICSKT_CHECKBOX, Constants.ELEKTROKROMATICSKT_CHECKBOX).click();
+        (await this.web.element(this.ELEKTROKROMATICSKT_CHECKBOX, Constants.ELEKTROKROMATICSKT_CHECKBOX).scrollIntoView()).click();
      }
 }
