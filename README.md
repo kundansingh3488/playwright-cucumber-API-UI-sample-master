@@ -2,32 +2,105 @@
 <br>
 # playwright-cucumber-TS-sample
 
-## **Overview:**
+### **Overview**
 
-This is a sample test automation framework developed using **Playwright** with **Cucumber** with TS.
+- **Framework Description**:
+  - Sample test automation framework developed using **Playwright** with **Cucumber** and **TypeScript (TS)**.
 
-**Playwright** is a framework for Web Testing and Automation. It allows testing Chromium, Firefox and WebKit with a single API. Playwright is built to enable cross-browser web automation that is ever-green, capable, reliable and fast.
+#### **Playwright**
+- **Definition**: 
+  - A robust framework designed for web testing and automation.
+  
+- **Key Features**:
+  - Supports testing across multiple browsers including Chromium, Firefox, and WebKit.
+  - Offers a single API for cross-browser web automation.
+  - Optimized for speed, reliability, and capability in web automation.
+  - Always up-to-date with modern web standards (ever-green).
 
-**Cucumber** is a tool for running automated tests written in plain language. Because they're written in plain language, they can be read by anyone on your team. Because they can be read by anyone, you can use them to help improve communication, collaboration and trust on your team. Cucumber supports behavior-driven development. Central to the Cucumber BDD approach is its ordinary language parser called Gherkin. 
+#### **Cucumber**
+- **Definition**: 
+  - A tool for executing automated tests written in plain language.
+  
+- **Advantages**:
+  - Tests are written in plain language, making them accessible to all team members, regardless of technical expertise.
+  - Enhances communication, collaboration, and trust within the team.
+  - Supports Behavior-Driven Development (BDD), improving clarity of requirements and functionality.
 
-For Demo purpose web UI test cases are created on [Polestar](https://www.polestar.com/us) site and API test cases are created on these [SOAP API](http://www.dneonline.com/calculator.asmx) & [REST Information API](https://www.libraryinformationsystem.org/Services/RestService.svc) endpoints.
+- **Gherkin**:
+  - Utilizes a natural language parser known as Gherkin, which is central to the Cucumber BDD approach.
+
+#### **Demo Test Cases**
+- **Web UI Testing**:
+  - Test cases created for the Polestar website: [Polestar](https://www.polestar.com/us).
+
+- **API Testing**:
+  - API test cases developed for the following endpoints:
+    - SOAP API: [DNE Online Calculator API](http://www.dneonline.com/calculator.asmx)
+    - REST Information API: [Library Information System REST Service](https://www.libraryinformationsystem.org/Services/RestService.svc).
+
+This structure clearly outlines the framework features and technologies while emphasizing the benefits and application of Playwright and Cucumber in test automation.
 
 ## Features
 
-- This testing framework supports Behavior Driven Development (BDD). Tests are written in plain English text called Gherkin
-- Framework has built in library to operate on UI, API (both SOAP & REST API) and DB (MSSQL, DB2 & Oracle).
-- Supports execution of tests in different browsers.
-- Supports running scenarios in parallel mode. It runs 2 scenarios in parallel by default.
-- Flaky scenario can be Retried multiple times until either it passes or the maximum number of attempts is reached. You can enable this via the retry configuration option.
-- Supports rerun of the failed scenarios.
-- Scenarios can be easily skipped by adding @ignore tag to scenarios
-- Supports dry run of scenarios this helps to identifies the undefined and ambiguous steps.
-- Has utility built in for file download, Read PDF files etc.
-- Generates Cucumber HTML Report & HTML Report.
-- HTML reports are included with snapshots and video in case of failed scenarios.
-- Test execution logs are captured in the log file.
-- All the configuration are controlled by .env file and environment variables can be modified at runtime.
-- Easy and simple integration to CI/CD tools like Jenkins.
+- Here’s a rewritten version organized into bullet points and phases for clarity:
+
+### Testing Framework Features
+
+#### 1. **Development and Design**
+- **BDD Support**: 
+  - Framework supports Behavior Driven Development (BDD).
+  - Tests are written in plain English text using Gherkin syntax.
+
+#### 2. **Core Functionality**
+- **Multi-Protocol Support**: 
+  - Built-in library to operate on various interfaces:
+    - UI testing
+    - API testing (supports both SOAP and REST APIs)
+    - Database testing (compatible with MSSQL, DB2, and Oracle)
+
+#### 3. **Execution Capabilities**
+- **Cross-Browser Testing**: 
+  - Supports execution of tests in multiple browsers.
+  
+- **Parallel Execution**:
+  - Allows running scenarios in parallel mode (default configuration runs 2 scenarios simultaneously).
+  
+- **Retries for Flaky Scenarios**:
+  - Flaky scenarios can be retried multiple times until they pass or reach the maximum number of attempts.
+  - This feature can be enabled via the retry configuration option.
+
+- **Failure Management**:
+  - Supports rerunning of failed scenarios for better coverage.
+
+#### 4. **Test Management**
+- **Scenario Management**: 
+  - Scenarios can be easily skipped by adding the `@ignore` tag.
+  
+- **Dry Run Feature**: 
+  - Supports a dry run of scenarios, which helps identify undefined and ambiguous steps.
+
+#### 5. **Utility Functions**
+- **File Handling**: 
+  - Built-in utilities for file downloads and reading PDF files.
+
+#### 6. **Reporting**
+- **Report Generation**:
+  - Generates Cucumber HTML Reports and standard HTML Reports.
+  - Reports include snapshots and videos of failed scenarios for better debugging.
+
+- **Logging**: 
+  - Captures test execution logs in a log file for traceability.
+  
+#### 7. **Configuration Management**
+- **Environment Configuration**:
+  - All configurations are controlled via a `.env` file.
+  - Environment variables can be modified at runtime.
+
+#### 8. **Integration**
+- **CI/CD Integration**: 
+  - Offers easy and simple integration with CI/CD tools like GitHub Action/AWS/Jenkins for seamless deployment and testing processes. 
+
+This structure clearly organizes the features and capabilities of the testing framework, making it easily understandable and digestible.
 
 ## Supported Browsers
 
@@ -100,4 +173,20 @@ Execution log will be present in the log file.
 ```sh
 test-results/logs/execution.log
 ```
-Thank you.....
+#### Steps to use Load Testing
+##### 1. Installation
+Create and initialize a new script by running the following command:
+```sh
+ k6 new
+```
+##### 2. Test creation 
+Run k6 with the following command:
+```sh
+ k6 run script.js
+```
+##### 3. To Add Virtuals Users 
+Run a load test with more than one virtual user and a longer duration:
+For eg: 10 virtual users for 30 seconds.
+```sh
+ k6 run --vus 10 --duration 30s script.js
+```
