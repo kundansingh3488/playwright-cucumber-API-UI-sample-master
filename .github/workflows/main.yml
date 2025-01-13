@@ -2,7 +2,6 @@
 # For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
 
 name: Automation Test Execution 
-
 on:
   workflow_dispatch:
   push:
@@ -10,34 +9,45 @@ on:
     
 jobs:
   tests:
-    name: Cucumer features execution
+    name: Cucumber features execution
     runs-on: windows-latest
     steps:
     - name: Checkout code from repository
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
+      
     - name: Setting up Node.js 22
-      uses: actions/setup-node@v3
+      uses: actions/setup-node@v4
       with:
         node-version: 22
         cache: 'npm'
+        
     - name: Install dependencies    
       run: npm ci
+      
     - name: Test execution
-      # run: npm run test:tags "@validSearch"
       run: npm run test:tags "@regression"
+      
     - name: Upload test results
       if: always()
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: test-results
         path: test-results  
-    - name: Generating cucubmer report
+        
+    - name: Generating cucumber report
       if: always()
-      # uses: deblockt/cucumber-report-annotations-action@v1.7
-      # with:
-      #   access-token: ${{ secrets.GITHUB_TOKEN }}
-      #   path: "**/cucumber.html"
-      uses: actions/upload-artifact@v3
+      run: |
+        echo "Checking for the cucumber report..."
+        ls /test-results/reports/cucumber.html || echo "No cucumber report generated."
+        
+      # Make sure the cucumber report generation is done here
+      # Use appropriate script if needed to generate reports
+      
+    - name: Upload Cucumber report
+      if: always()
+      uses: actions/upload-artifact@v4
       with:
         name: cucumber-report
-        path: "**/cucumber.html"
+        # path: "/cucumber.html"
+        path: "/test-results/reports/cucumber.html"  # Ensure this path is correct
+
