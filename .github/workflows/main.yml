@@ -10,7 +10,7 @@ on:
 jobs:
   tests:
     name: Cucumber features execution
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
     steps:
     - name: Checkout code from repository
       uses: actions/checkout@v4
@@ -39,11 +39,13 @@ jobs:
       run: |
         echo "Checking for the cucumber report..."
         ls /cucumber.html || echo "No cucumber report generated."
+        
+      # Make sure the cucumber report generation is done here
+      # Use appropriate script if needed to generate reports
       
     - name: Upload Cucumber report
       if: always()
       uses: actions/upload-artifact@v4
       with:
         name: cucumber-report
-        path: "**/cucumber.html"
-
+        path: "**/cucumber.html"  # Ensure this path is correct
