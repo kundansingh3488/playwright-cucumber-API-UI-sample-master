@@ -11,11 +11,12 @@ export default class CommonPage {
     private SEARCH_BUTTON = ".search-button";
     private MY_ACCOUNT_LINK = "//li[contains(@class,'dropdown')]//span[contains(text(),'My account')]";
     private MENU_LINK = "//ul[contains(@class,'dropdown-menu')]//span[contains(text(),'{0}')]";
-
+    
     /**
      * Search for a product from header banner
      * @param product 
      */
+
     public async searchProduct(product: string) {
         await this.web.editBox(this.SEARCH_TEXTBOX, Constants.PRODUCT).fill(product);
         await this.web.element(this.SEARCH_BUTTON, Constants.SEARCH_BUTTON).click();

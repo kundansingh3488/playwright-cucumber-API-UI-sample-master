@@ -88,7 +88,7 @@ export default class UIActions {
    * @param description
    * @returns
    */
-  public element(selector: string, description: string) {
+  public element(selector: string, description?: string) {
     return this.elementAction.setElement(selector, description);
   }
 
