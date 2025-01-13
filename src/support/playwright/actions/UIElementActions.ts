@@ -6,6 +6,8 @@ export default class UIElementActions {
   protected locator: Locator;
   protected description: string;
   protected selector: string;
+  protected  DropDownActions: String;
+  protected CheckBoxActions : String;
 
   constructor(private page: Page) { }
 
@@ -31,7 +33,7 @@ export default class UIElementActions {
    * @param description
    * @returns
    */
-  public setElement(selector: string, description: string): UIElementActions {
+  public setElement(selector: string, description?: string): UIElementActions {
     this.selector = selector;
     this.locator = this.page.locator(this.selector);
     this.description = description;

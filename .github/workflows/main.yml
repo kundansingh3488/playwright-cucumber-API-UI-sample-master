@@ -6,7 +6,7 @@ name: Automation Test Execution
 on:
   workflow_dispatch:
   push:
-    branches: [ dev ]
+    branches: [ main, dev ]
     
 jobs:
   tests:
@@ -33,7 +33,11 @@ jobs:
         path: test-results  
     - name: Generating cucubmer report
       if: always()
-      uses: deblockt/cucumber-report-annotations-action@v1.7
+      # uses: deblockt/cucumber-report-annotations-action@v1.7
+      # with:
+      #   access-token: ${{ secrets.GITHUB_TOKEN }}
+      #   path: "**/cucumber.html"
+      uses: actions/upload-artifact@v3
       with:
-        access-token: ${{ secrets.GITHUB_TOKEN }}
+        name: cucumber-report
         path: "**/cucumber.html"
