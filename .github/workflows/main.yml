@@ -10,7 +10,7 @@ on:
 jobs:
   tests:
     name: Cucumber features execution
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
     steps:
     - name: Checkout code from repository
       uses: actions/checkout@v4
@@ -48,6 +48,6 @@ jobs:
       uses: actions/upload-artifact@v4
       with:
         name: cucumber-report
-        # path: "/cucumber.html"
+        # path: "**/cucumber.html"
         path: "/test-results/reports/cucumber.html"  # Ensure this path is correct
 
